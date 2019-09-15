@@ -20,6 +20,7 @@ namespace DatabaseCaseExtractorDemo.Model
         public Guid TableOneId { get; set; }
 
         [DatabaseCaseExtractorInclude]
+        [ForeignKey("TableOneId")]
         public Table1 TableOne { get; set; }
 
         // Table Thirds

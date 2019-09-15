@@ -21,7 +21,7 @@ namespace DatabaseCaseExtractorDemo.Base
 
             Table1 record1 = new Table1()
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.Parse("79946776-b133-4d6e-892b-97d8dbbc26d8"),
                 IntOne = 1,
                 NameOne = "A",
                 DateOne = DateTime.Now
@@ -81,6 +81,21 @@ namespace DatabaseCaseExtractorDemo.Base
                 TableSecondId = 2
             };
             modelBuilder.Entity<Table3>().HasData(record7);
+
+
+            AdditionalDataTable record8 = new AdditionalDataTable()
+            {
+                Id = Guid.Parse("88ddf83c-9eaf-4f4a-abb3-2f3277096d17"),
+                NameAdditional = "Test1"
+            };
+            modelBuilder.Entity<AdditionalDataTable>().HasData(record8);
+            AdditionalDataTable record9 = new AdditionalDataTable()
+            {
+                Id = Guid.Parse("64925c3c-8ceb-490b-8735-6fdcc1f47c96"),
+                NameAdditional = "Test2"
+            };
+            modelBuilder.Entity<AdditionalDataTable>().HasData(record9);
+
         }
         #endregion
 
@@ -88,6 +103,7 @@ namespace DatabaseCaseExtractorDemo.Base
         public DbSet<Table1> TableOnes { get; set; }
         public DbSet<Table2> TableSeconds { get; set; }
         public DbSet<Table3> TableThirds { get; set; }
+        public DbSet<AdditionalDataTable> AdditionalDataTables { get; set; }
         #endregion
 
     }

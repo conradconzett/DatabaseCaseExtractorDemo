@@ -20,6 +20,7 @@ namespace DatabaseCaseExtractorDemo.Model
         public int TableSecondId { get; set; }
 
         [DatabaseCaseExtractorInclude]
+        [ForeignKey("TableSecondId")]
         public Table2 TableSecond { get; set; }
 
     }
