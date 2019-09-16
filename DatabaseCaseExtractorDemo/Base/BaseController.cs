@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseCaseExtractorDemo.Base
 {
@@ -45,7 +45,37 @@ namespace DatabaseCaseExtractorDemo.Base
         public ActionResult<bool> Import(ExportResult importData)
         {
             ExportImportService<T> tempService = new ExportImportService<T>(_context);
-            return Ok(tempService.SetImportResult(importData));
+            // tempService.BeforeSaveChangesEvent += TempService_BeforeSaveChangesEvent;
+            // tempService.AfterSaveChangesEvent += TempService_AfterSaveChangesEvent;
+            // this.TempService_BeforeSaveChangesEvent(null, null);
+            bool res = tempService.SetImportResult(importData);
+            _context.SaveChanges();
+            // this.TempService_AfterSaveChangesEvent(null, null);
+            return Ok(res);
+        }
+
+        private void TempService_AfterSaveChangesEvent(object sender, DatabaseCaseExtractor.EventArgs.AfterSaveChangeEventArgs e)
+        {
+            try
+            {
+                _context.Database.ExecuteSqlCommand((string)$"SET IDENTITY_INSERT TableSeconds OFF");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void TempService_BeforeSaveChangesEvent(object sender, DatabaseCaseExtractor.EventArgs.BeforeSaveChangeEventArgs e)
+        {
+            try
+            {
+                _context.Database.ExecuteSqlCommand((string)$"SET IDENTITY_INSERT TableSeconds ON");
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

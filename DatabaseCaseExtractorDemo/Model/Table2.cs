@@ -11,6 +11,7 @@ namespace DatabaseCaseExtractorDemo.Model
     public class Table2
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public string NameSecond { get; set; }
         public DateTime DateSecond { get; set; }

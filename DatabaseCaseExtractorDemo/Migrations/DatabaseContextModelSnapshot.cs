@@ -62,7 +62,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8"),
-                            DateOne = new DateTime(2019, 9, 16, 18, 46, 42, 835, DateTimeKind.Local).AddTicks(1745),
+                            DateOne = new DateTime(2019, 9, 16, 21, 28, 31, 241, DateTimeKind.Local).AddTicks(2262),
                             IntOne = 1,
                             NameOne = "A"
                         });
@@ -70,9 +70,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
 
             modelBuilder.Entity("DatabaseCaseExtractorDemo.Model.Table2", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("Id");
 
                     b.Property<DateTime>("DateSecond");
 
@@ -92,7 +90,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = 1,
-                            DateSecond = new DateTime(2019, 9, 16, 18, 46, 42, 839, DateTimeKind.Local).AddTicks(9832),
+                            DateSecond = new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(4630),
                             IntSecond = 1,
                             NameSecond = "A",
                             TableOneId = new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8")
@@ -100,7 +98,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = 2,
-                            DateSecond = new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(2577),
+                            DateSecond = new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(7004),
                             IntSecond = 1,
                             NameSecond = "A",
                             TableOneId = new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8")
@@ -130,7 +128,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = "A",
-                            DateThird = new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(5196),
+                            DateThird = new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(9286),
                             IntThird = 1,
                             NameThird = "A",
                             TableSecondId = 1
@@ -138,7 +136,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = "B",
-                            DateThird = new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6750),
+                            DateThird = new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(636),
                             IntThird = 1,
                             NameThird = "A",
                             TableSecondId = 1
@@ -146,7 +144,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = "C",
-                            DateThird = new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6797),
+                            DateThird = new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(675),
                             IntThird = 1,
                             NameThird = "A",
                             TableSecondId = 2
@@ -154,7 +152,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                         new
                         {
                             Id = "D",
-                            DateThird = new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6816),
+                            DateThird = new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(691),
                             IntThird = 1,
                             NameThird = "A",
                             TableSecondId = 2

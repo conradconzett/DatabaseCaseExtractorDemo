@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DatabaseCaseExtractorDemo.Migrations
@@ -38,8 +37,7 @@ namespace DatabaseCaseExtractorDemo.Migrations
                 name: "TableSeconds",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<int>(nullable: false),
                     NameSecond = table.Column<string>(nullable: true),
                     DateSecond = table.Column<DateTime>(nullable: false),
                     IntSecond = table.Column<int>(nullable: false),
@@ -90,27 +88,27 @@ namespace DatabaseCaseExtractorDemo.Migrations
             migrationBuilder.InsertData(
                 table: "TableOnes",
                 columns: new[] { "Id", "DateOne", "IntOne", "NameOne" },
-                values: new object[] { new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8"), new DateTime(2019, 9, 16, 18, 46, 42, 835, DateTimeKind.Local).AddTicks(1745), 1, "A" });
+                values: new object[] { new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8"), new DateTime(2019, 9, 16, 21, 28, 31, 241, DateTimeKind.Local).AddTicks(2262), 1, "A" });
 
             migrationBuilder.InsertData(
                 table: "TableSeconds",
                 columns: new[] { "Id", "DateSecond", "IntSecond", "NameSecond", "TableOneId" },
-                values: new object[] { 1, new DateTime(2019, 9, 16, 18, 46, 42, 839, DateTimeKind.Local).AddTicks(9832), 1, "A", new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8") });
+                values: new object[] { 1, new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(4630), 1, "A", new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8") });
 
             migrationBuilder.InsertData(
                 table: "TableSeconds",
                 columns: new[] { "Id", "DateSecond", "IntSecond", "NameSecond", "TableOneId" },
-                values: new object[] { 2, new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(2577), 1, "A", new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8") });
+                values: new object[] { 2, new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(7004), 1, "A", new Guid("79946776-b133-4d6e-892b-97d8dbbc26d8") });
 
             migrationBuilder.InsertData(
                 table: "TableThirds",
                 columns: new[] { "Id", "DateThird", "IntThird", "NameThird", "TableSecondId" },
                 values: new object[,]
                 {
-                    { "A", new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(5196), 1, "A", 1 },
-                    { "B", new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6750), 1, "A", 1 },
-                    { "C", new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6797), 1, "A", 2 },
-                    { "D", new DateTime(2019, 9, 16, 18, 46, 42, 840, DateTimeKind.Local).AddTicks(6816), 1, "A", 2 }
+                    { "A", new DateTime(2019, 9, 16, 21, 28, 31, 267, DateTimeKind.Local).AddTicks(9286), 1, "A", 1 },
+                    { "B", new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(636), 1, "A", 1 },
+                    { "C", new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(675), 1, "A", 2 },
+                    { "D", new DateTime(2019, 9, 16, 21, 28, 31, 268, DateTimeKind.Local).AddTicks(691), 1, "A", 2 }
                 });
 
             migrationBuilder.CreateIndex(
