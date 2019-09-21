@@ -21,7 +21,9 @@ namespace DatabaseCaseExtractorDemo.Base
         [HttpGet]
         public ActionResult<List<T>> Get()
         {
-            return Ok(_context.Set<T>().AsQueryable().ToList());
+            List<T> tempList = _context.Set<T>().AsQueryable().ToList();
+            //string tempRes = Console.ReadLine();
+            return Ok(tempList);
         }
 
         [HttpPost]
@@ -42,40 +44,19 @@ namespace DatabaseCaseExtractorDemo.Base
 
         [HttpPost]
         [Route("import")]
-        public ActionResult<bool> Import(ExportResult importData)
+        public ActionResult Import(ExportResult importData)
         {
             ExportImportService<T> tempService = new ExportImportService<T>(_context);
-            // tempService.BeforeSaveChangesEvent += TempService_BeforeSaveChangesEvent;
-            // tempService.AfterSaveChangesEvent += TempService_AfterSaveChangesEvent;
-            // this.TempService_BeforeSaveChangesEvent(null, null);
-            bool res = tempService.SetImportResult(importData);
-            _context.SaveChanges();
-            // this.TempService_AfterSaveChangesEvent(null, null);
-            return Ok(res);
+            tempService.SetImportResult(importData);
+            return Ok();
         }
 
-        private void TempService_AfterSaveChangesEvent(object sender, DatabaseCaseExtractor.EventArgs.AfterSaveChangeEventArgs e)
+        [HttpPost]
+        [Route("statements")]
+        public ActionResult<List<LogEntry>> Statements(ExportResult[] dataSets)
         {
-            try
-            {
-                _context.Database.ExecuteSqlCommand((string)$"SET IDENTITY_INSERT TableSeconds OFF");
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void TempService_BeforeSaveChangesEvent(object sender, DatabaseCaseExtractor.EventArgs.BeforeSaveChangeEventArgs e)
-        {
-            try
-            {
-                _context.Database.ExecuteSqlCommand((string)$"SET IDENTITY_INSERT TableSeconds ON");
-            }
-            catch (Exception)
-            {
-
-            }
+            ExportImportService<T> tempService = new ExportImportService<T>(_context);
+            return Ok(tempService.ExportSQLScripts(dataSets[0], dataSets[1]));
         }
     }
 }
