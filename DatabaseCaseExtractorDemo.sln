@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseCaseExtractorDemo",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseCaseExtractor", "..\conradconzett\DatabaseCaseExtractor\DatabaseCaseExtractor\DatabaseCaseExtractor.csproj", "{1AC97299-174D-4034-9BDC-8B9B32304399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseCaseExtractorCli", "DatabaseCaseExtractorCli\DatabaseCaseExtractorCli.csproj", "{319E54A6-CB00-4FEC-8386-D185841B5FAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1AC97299-174D-4034-9BDC-8B9B32304399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC97299-174D-4034-9BDC-8B9B32304399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC97299-174D-4034-9BDC-8B9B32304399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319E54A6-CB00-4FEC-8386-D185841B5FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319E54A6-CB00-4FEC-8386-D185841B5FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319E54A6-CB00-4FEC-8386-D185841B5FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319E54A6-CB00-4FEC-8386-D185841B5FAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

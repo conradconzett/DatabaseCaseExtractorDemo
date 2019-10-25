@@ -1,10 +1,10 @@
 ﻿using DatabaseCaseExtractor;
 using DatabaseCaseExtractor.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using DatabaseCaseExtractorDemo.Base;
 
 namespace DatabaseCaseExtractorDemo.Base
 {
@@ -22,7 +22,6 @@ namespace DatabaseCaseExtractorDemo.Base
         public ActionResult<List<T>> Get()
         {
             List<T> tempList = _context.Set<T>().AsQueryable().ToList();
-            //string tempRes = Console.ReadLine();
             return Ok(tempList);
         }
 
@@ -58,5 +57,6 @@ namespace DatabaseCaseExtractorDemo.Base
             ExportImportService<T> tempService = new ExportImportService<T>(_context);
             return Ok(tempService.ExportSQLScripts(dataSets[0], dataSets[1]));
         }
+
     }
 }
